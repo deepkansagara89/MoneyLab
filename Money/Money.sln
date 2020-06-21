@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Money", "Money\Money.csproj", "{02AFC332-32C4-4A33-B41A-C4DB14652C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepTest", "DeepTest\DeepTest.csproj", "{D08B35E2-2000-475C-A601-6224A3F0D576}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02AFC332-32C4-4A33-B41A-C4DB14652C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02AFC332-32C4-4A33-B41A-C4DB14652C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02AFC332-32C4-4A33-B41A-C4DB14652C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02AFC332-32C4-4A33-B41A-C4DB14652C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08B35E2-2000-475C-A601-6224A3F0D576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08B35E2-2000-475C-A601-6224A3F0D576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08B35E2-2000-475C-A601-6224A3F0D576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08B35E2-2000-475C-A601-6224A3F0D576}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEB3B2CF-111D-407C-BC40-07882BFA0790}
+	EndGlobalSection
+EndGlobal
