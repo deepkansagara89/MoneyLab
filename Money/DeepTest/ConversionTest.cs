@@ -31,7 +31,7 @@ namespace DeepTest
 
 			Assert.AreEqual(money3.CurrencyCode, money2.CurrencyCode);
 			Assert.AreNotEqual(money3, money2);
-			Assert.IsTrue(money3 > money2);
+			Assert.IsTrue(money3 < money2);
 			Assert.IsTrue(money1 != money3);
 			Assert.AreNotEqual(money3, money1);
 

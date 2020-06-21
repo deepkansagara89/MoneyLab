@@ -70,8 +70,16 @@ namespace DeepMoney
 		{
 			var result = new Dictionary<CurrencyCodes, Currency>();
 			foreach (CurrencyCodes code in Enum.GetValues(typeof(CurrencyCodes)))
-				result.Add(code, new Currency(code));
-			return result;
+            {
+                try
+                {
+                    result.Add(code, new Currency(code));
+                }
+                catch (Exception)
+                {
+                }
+            }
+            return result;
 		}
 	}
 
@@ -94,8 +102,8 @@ namespace DeepMoney
 		BHD = 48,
 		BND = 96,
 		BOB = 68,
-		//BRL = 986,
-		//BYR = 974,
+		BRL = 986,
+		BYR = 974,
 		BZD = 84,
 		CAD = 124,
 		CHF = 756,
@@ -107,7 +115,7 @@ namespace DeepMoney
 		DKK = 208,
 		DOP = 214,
 		DZD = 12,
-		//    EEK = 233,
+		EEK = 233,
 		EGP = 818,
 		ETB = 230,
 		EUR = 978,
@@ -136,8 +144,8 @@ namespace DeepMoney
 		LAK = 418,
 		LBP = 422,
 		LKR = 144,
-		//LTL = 440,
-		//    LVL = 428,
+		LTL = 440,
+		LVL = 428,
 		LYD = 434,
 		MAD = 504,
 		MKD = 807,
@@ -176,11 +184,11 @@ namespace DeepMoney
 		USD = 840,
 		UYU = 858,
 		UZS = 860,
-		//VEF = 937,
+		VEF = 937,
 		VND = 704,
 		XOF = 952,
 		YER = 886,
 		ZAR = 710,
-		//    ZWL = 932
+		ZWL = 932
 	}
 }

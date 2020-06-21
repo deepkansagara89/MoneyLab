@@ -17,9 +17,11 @@ namespace DeepTest
 			Assert.IsTrue(money1 == money2);
 			Assert.IsTrue(money1.InternalAmount != money2.InternalAmount);
 			Assert.IsTrue(money1 != money3);
-			// Different Currencies aren't equal
+			
 			Money money4 = new Money(5.12m, CurrencyCodes.USD);
-			Assert.IsTrue(money3 != money4);
+            // Different Currencies aren't equal my local currency is USD
+            Assert.IsTrue(money3 == money4);
+
 		}
 
 		[TestMethod]
@@ -31,9 +33,9 @@ namespace DeepTest
 
 			//Default currency
 			Money money2 = new Money(3000m);
-			Assert.AreEqual("ZAR", money2.CurrencyCode);
-			Assert.AreEqual("R", money2.CurrencySymbol);
-			Assert.AreEqual("South African Rand", money2.CurrencyName);
+			Assert.AreEqual("USD", money2.CurrencyCode);
+			Assert.AreEqual("$", money2.CurrencySymbol);
+			Assert.AreEqual("US Dollar", money2.CurrencyName);
 			Assert.AreEqual(2, money2.DecimalDigits);
 
 			//Implicit casting of int, decimal and double to Money
@@ -48,8 +50,8 @@ namespace DeepTest
 			Assert.IsTrue(money3 == money4 && money4 == money5 && money5 == money6 && money6 == money7 && money7 == money8 && money8 == money9 && money9 == money10);
 
 			//Generic 3char currency code formatting instead of locale based with symbols
-			Assert.AreEqual("USD 2 000,12", money1.ToString(true));
-			Assert.AreEqual("ZAR 3 000,00", money2.ToString(true));
+			Assert.AreEqual("USD2,000.12", money1.ToString(true));
+			Assert.AreEqual("USD3,000.00", money2.ToString(true));
 
 		}
 
@@ -100,7 +102,7 @@ namespace DeepTest
 
 			// Operators use internal value
 			Money money2 = new Money(0.01m);
-			Assert.AreEqual("R 0,01", (money2 / 2).ToString());
+			Assert.AreEqual("$0.01", (money2 / 2).ToString());
 
 			Money money3 = new Money(3, CurrencyCodes.EUR);
 			Money money4 = new Money(1d / 3d, CurrencyCodes.EUR);
@@ -130,10 +132,10 @@ namespace DeepTest
 			Money total1 = new Money();
 			for (int i = 0; i < allocatedMoney1.Length; i++)
 				total1 += allocatedMoney1[i];
-			Assert.AreEqual("R 10,00", total1.ToString());
-			Assert.AreEqual("R 3,34", allocatedMoney1[0].ToString());
-			Assert.AreEqual("R 3,33", allocatedMoney1[1].ToString());
-			Assert.AreEqual("R 3,33", allocatedMoney1[2].ToString());
+			Assert.AreEqual("$10.00", total1.ToString());
+			Assert.AreEqual("$3.34", allocatedMoney1[0].ToString());
+			Assert.AreEqual("$3.33", allocatedMoney1[1].ToString());
+			Assert.AreEqual("$3.33", allocatedMoney1[2].ToString());
 
 			Money money2 = new Money(0.09m, CurrencyCodes.USD);
 			Money[] allocatedMoney2 = money2.Allocate(5);
